@@ -29,7 +29,7 @@ public class Top : MonoBehaviour, IEquatable<Top>
     {
         knockbackTimer += Time.deltaTime;
 
-        if (CurrentSpin == 0)
+        if (CurrentSpin == Spin.MIN)
         {
             TopDied.Raise(this);
             Destroy(gameObject);
