@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityAtoms.Tags;
 using UnityAtoms.BaseAtoms;
 using crass;
 
-public class Top : MonoBehaviour
+public class Top : MonoBehaviour, IEquatable<Top>
 {
     public Spin CurrentSpin;
 
@@ -58,6 +59,11 @@ public class Top : MonoBehaviour
 
         collisionLock = false;
     }
+
+	public bool Equals (Top other)
+	{
+        return this == other;
+	}
 
     public void SetInput (Vector3 worldDirection)
     {
