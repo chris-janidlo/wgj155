@@ -3,7 +3,7 @@ using UnityAtoms.Tags;
 using UnityAtoms.BaseAtoms;
 using crass;
 
-public class TopPhysics : MonoBehaviour
+public class Top : MonoBehaviour
 {
     public Spin CurrentSpin;
 
@@ -40,7 +40,7 @@ public class TopPhysics : MonoBehaviour
 
         knockbackTimer = 0;
 
-        TopPhysics otherTop = collision.gameObject.GetComponent<TopPhysics>();
+        Top otherTop = collision.gameObject.GetComponent<Top>();
 
         if (otherTop == null)
         {
@@ -64,7 +64,7 @@ public class TopPhysics : MonoBehaviour
         input = worldDirection.normalized;
     }
 
-    void redistributeSpinWith (TopPhysics otherTop)
+    void redistributeSpinWith (Top otherTop)
     {
         collisionLock = true;
         otherTop.collisionLock = true;
@@ -73,8 +73,8 @@ public class TopPhysics : MonoBehaviour
             ? RandomExtra.Chance(.5f) // ties are broken randomly
             : CurrentSpin > otherTop.CurrentSpin;
 
-        TopPhysics fasterSpinningTop = thisSpunFaster ? this : otherTop;
-        TopPhysics slowerSpinningTop = thisSpunFaster ? otherTop : this;
+        Top fasterSpinningTop = thisSpunFaster ? this : otherTop;
+        Top slowerSpinningTop = thisSpunFaster ? otherTop : this;
  
         Spin differential = Mathf.Min(fasterSpinningTop.CurrentSpin, Spin.MAX - slowerSpinningTop.CurrentSpin);
 

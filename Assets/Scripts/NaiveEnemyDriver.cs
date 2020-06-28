@@ -4,7 +4,7 @@ using UnityAtoms.BaseAtoms;
 public class NaiveEnemyDriver : MonoBehaviour
 {
     public Vector3Variable PlayerPosition;
-    public TopPhysics TopPhysics;
+    public Top TopPhysics;
 
     void Update ()
     {

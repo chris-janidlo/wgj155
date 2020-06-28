@@ -2,7 +2,7 @@
 
 public class PlayerDriver : MonoBehaviour
 {
-    public TopPhysics TopPhysics;
+    public Top TopPhysics;
 
     public string XInputAxis, ZInputAxis;
 
