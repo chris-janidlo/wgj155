@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityAtoms;
 using UnityAtoms.Tags;
 using UnityAtoms.BaseAtoms;
 using crass;
@@ -10,6 +11,8 @@ public class Top : MonoBehaviour, IEquatable<Top>
 
     public TopStats Stats;
     public Rigidbody Rigidbody;
+
+    public TopEvent TopDied;
     public StringConstant GroundTag;
 
     float knockbackTimer;
@@ -25,6 +28,12 @@ public class Top : MonoBehaviour, IEquatable<Top>
     void Update ()
     {
         knockbackTimer += Time.deltaTime;
+
+        if (CurrentSpin == 0)
+        {
+            TopDied.Raise(this);
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate ()

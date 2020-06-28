@@ -51,6 +51,7 @@ MonoBehaviour:
     value: 0
   Stats: {fileID: 11400000, guid: 2b364bc1bdfc84c84a8813621c1afc45, type: 2}
   Rigidbody: {fileID: 2883135312020407753}
+  TopDied: {fileID: 11400000, guid: 45c7bbbc7b73c46409bf7ebdffd16808, type: 2}
   GroundTag: {fileID: 11400000, guid: c9584a68e098e4a0aa366da28525df63, type: 2}
 --- !u!54 &2883135312020407753
 Rigidbody:
