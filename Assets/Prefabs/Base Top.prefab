@@ -47,8 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f18e59def0a54bc5b0291d0c7e82445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentSpin:
+    value: 0
   Stats: {fileID: 11400000, guid: 2b364bc1bdfc84c84a8813621c1afc45, type: 2}
   Rigidbody: {fileID: 2883135312020407753}
+  GroundTag: {fileID: 11400000, guid: c9584a68e098e4a0aa366da28525df63, type: 2}
 --- !u!54 &2883135312020407753
 Rigidbody:
   m_ObjectHideFlags: 0
