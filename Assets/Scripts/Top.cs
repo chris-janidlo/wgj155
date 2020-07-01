@@ -7,13 +7,18 @@ using crass;
 
 public class Top : MonoBehaviour, IEquatable<Top>
 {
-    public Spin CurrentSpin;
-
     public TopStats Stats;
     public Rigidbody Rigidbody;
 
     public TopEvent TopDied;
     public StringConstant GroundTag;
+    public SpinVariableInstancer SpinVariableInstancer;
+
+    public Spin CurrentSpin
+    {
+        get => SpinVariableInstancer.Value;
+        private set => SpinVariableInstancer.Value = value;
+    }
 
     float knockbackTimer;
     Vector3 input;
