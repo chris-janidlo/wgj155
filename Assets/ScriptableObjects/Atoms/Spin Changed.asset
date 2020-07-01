@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f9e27913f264db2871b75b2c2d8ed6, type: 3}
+  m_Name: Spin Changed
+  m_EditorClassIdentifier: 
+  _developerDescription: Raised when the current speed of a top changes. Instanced
+    per top
+  _replayBufferSize: 2
+  _inspectorRaiseValue:
+    value: 0
