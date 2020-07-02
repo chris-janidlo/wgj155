@@ -4,17 +4,18 @@ public class PlayerDriver : MonoBehaviour
 {
     public Top TopPhysics;
 
-    public string XInputAxis, ZInputAxis;
+    public string XInputAxis, ZInputAxis, SpinButton;
 
     void Update ()
     {
-        Vector3 input = new Vector3
+        Vector3 directionalInput = new Vector3
         (
             Input.GetAxis(XInputAxis),
             0,
             Input.GetAxis(ZInputAxis)
         );
 
-        TopPhysics.SetInput(input);
+        TopPhysics.SetDirectionalInput(directionalInput);
+        TopPhysics.SetSpinInput(Input.GetButton(SpinButton));
     }
 }

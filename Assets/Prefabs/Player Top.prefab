@@ -215,6 +215,7 @@ MonoBehaviour:
   TopPhysics: {fileID: 1379976796091681831}
   XInputAxis: Horizontal
   ZInputAxis: Vertical
+  SpinButton: Jump
 --- !u!114 &2003232833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d226214e921426795051387e3bd249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionVariable: {fileID: 11400000, guid: 6c25c7f13129449fc9e6dd6d51311930, type: 2}
+  PlayerPosition: {fileID: 11400000, guid: 6c25c7f13129449fc9e6dd6d51311930, type: 2}
+  PlayerSpin: {fileID: 11400000, guid: ee56a68d130cf4cf7b7f63ab98a049fc, type: 2}
+  PlayerTop: {fileID: 1379976796091681831}
 --- !u!1 &8277282642669915483
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +242,6 @@ GameObject:
   - component: {fileID: 5289697670834930264}
   - component: {fileID: 7713800295341180496}
   - component: {fileID: 1506448008126200045}
-  - component: {fileID: 4301301486133759209}
   - component: {fileID: 5132616563950283823}
   m_Layer: 5
   m_Name: Gauge
@@ -287,46 +289,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dac49d719fd34b488d685ca3d99f307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VisualSpin:
-    value: 60
+  TransitionForLargeDeltas:
+    value: 0
     Time: 0.3
     Ease: 10
+  LargeDeltaMin:
+    value: 10
+  CurrentSpin: {fileID: 2290228412719071041}
   GaugeImage: {fileID: 5132616563950283823}
---- !u!114 &4301301486133759209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8277282642669915483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db50809c4f3444858583de05d5346da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _developerDescription: 
-  _unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1506448008126200045}
-        m_MethodName: OnSpinChange
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _actionResponses: []
-  _replayEventBufferOnRegister: 1
-  _eventReference:
-    _usage: 3
-    _event: {fileID: 0}
-    _eventInstancer: {fileID: 0}
-    _variable: {fileID: 0}
-    _variableInstancer: {fileID: 2290228412719071041}
 --- !u!114 &5132616563950283823
 MonoBehaviour:
   m_ObjectHideFlags: 0

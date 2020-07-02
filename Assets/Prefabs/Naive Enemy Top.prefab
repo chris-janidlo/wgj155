@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPosition: {fileID: 11400000, guid: 6c25c7f13129449fc9e6dd6d51311930, type: 2}
+  PlayerSpin: {fileID: 11400000, guid: ee56a68d130cf4cf7b7f63ab98a049fc, type: 2}
   TopPhysics: {fileID: 7044170760217087179}
 --- !u!1001 &5315126853578672387
 PrefabInstance:

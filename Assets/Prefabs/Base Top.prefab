@@ -9635,7 +9635,8 @@ MonoBehaviour:
   Rigidbody: {fileID: 2883135312020407753}
   TopDied: {fileID: 11400000, guid: 45c7bbbc7b73c46409bf7ebdffd16808, type: 2}
   GroundTag: {fileID: 11400000, guid: c9584a68e098e4a0aa366da28525df63, type: 2}
-  SpinVariableInstancer: {fileID: 2660742567853782702}
+  CurrentSpin: {fileID: 2660742567853782702}
+  SpinDelta: 0
 --- !u!54 &2883135312020407753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9811,21 +9812,21 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 30
-      inSlope: 6.9
-      outSlope: 6.9
-      tangentMode: 34
+      value: 0
+      inSlope: 0.46305937
+      outSlope: 0.46305937
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.0713246
     - serializedVersion: 3
       time: 100
       value: 720
-      inSlope: 6.9
-      outSlope: 6.9
-      tangentMode: 34
+      inSlope: 0.2363519
+      outSlope: 0.2363519
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.069869004
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

@@ -6,24 +6,32 @@ using UnityAtoms;
 using crass;
 
 // TODO: title for this in the UI
-// FIXME: shouldn't have to specify initial value for VisualSpin; atoms should just auto raise their initial values
 public class SpinGauge : MonoBehaviour
 {
-    public TransitionableFloat VisualSpin;
+    public TransitionableFloat TransitionForLargeDeltas;
+    public Spin LargeDeltaMin;
+
+    public SpinVariableInstancer CurrentSpin;
     public Image GaugeImage;
+
+    Spin previousSpin = 0;
 
     void Awake ()
     {
-        VisualSpin.AttachMonoBehaviour(this);
+        TransitionForLargeDeltas.AttachMonoBehaviour(this);
     }
 
     void Update ()
     {
-        GaugeImage.fillAmount = (VisualSpin.Value - Spin.MIN) / (Spin.MAX - Spin.MIN);
-    }
+        if (CurrentSpin.Value - previousSpin >= LargeDeltaMin)
+        {
+            TransitionForLargeDeltas.StartTransitionTo(CurrentSpin.Value);
+        }
 
-    public void OnSpinChange (Spin spin)
-    {
-        VisualSpin.StartTransitionTo(spin);
+        float valueToShow = TransitionForLargeDeltas.Transitioning ? TransitionForLargeDeltas.Value : (float) CurrentSpin.Value;
+
+        GaugeImage.fillAmount = (valueToShow - Spin.MIN) / (Spin.MAX - Spin.MIN);
+
+        previousSpin = CurrentSpin.Value;
     }
 }

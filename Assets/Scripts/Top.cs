@@ -12,29 +12,29 @@ public class Top : MonoBehaviour, IEquatable<Top>
 
     public TopEvent TopDied;
     public StringConstant GroundTag;
-    public SpinVariableInstancer SpinVariableInstancer;
+    public SpinVariableInstancer CurrentSpin;
 
-    public Spin CurrentSpin
-    {
-        get => SpinVariableInstancer.Value;
-        private set => SpinVariableInstancer.Value = value;
-    }
+    public float SpinDelta;
 
     float knockbackTimer;
-    Vector3 input;
     bool collisionLock;
+
+    Vector3 directionalInput;
+    bool spinInput;
 
     void Start ()
     {
         knockbackTimer = Stats.KnockbackTime;
-        CurrentSpin = Stats.InitialSpin;
+        CurrentSpin.Value = Stats.InitialSpin;
     }
 
     void Update ()
     {
+        updateSpin();
+
         knockbackTimer += Time.deltaTime;
 
-        if (CurrentSpin == Spin.MIN)
+        if (CurrentSpin.Value == Spin.MIN)
         {
             TopDied.Raise(this);
             Destroy(gameObject);
@@ -44,7 +44,7 @@ public class Top : MonoBehaviour, IEquatable<Top>
     void FixedUpdate ()
     {
         if (knockbackTimer >= Stats.KnockbackTime)
-            Rigidbody.AddForce(input * Stats.Acceleration, ForceMode.Acceleration);
+            Rigidbody.AddForce(directionalInput * Stats.Acceleration, ForceMode.Acceleration);
 
         Rigidbody.velocity = Vector3.ClampMagnitude(Rigidbody.velocity, Stats.MaxSpeed);
     }
@@ -59,7 +59,7 @@ public class Top : MonoBehaviour, IEquatable<Top>
 
         if (otherTop == null)
         {
-            CurrentSpin /= 2;
+            CurrentSpin.Value /= 2;
         }
         else if (!collisionLock && !otherTop.collisionLock)
         {
@@ -79,9 +79,27 @@ public class Top : MonoBehaviour, IEquatable<Top>
         return this == other;
 	}
 
-    public void SetInput (Vector3 worldDirection)
+    public void SetDirectionalInput (Vector3 worldDirection)
     {
-        input = worldDirection.normalized;
+        directionalInput = worldDirection.normalized;
+    }
+
+    public void SetSpinInput (bool spin)
+    {
+        spinInput = spin;
+    }
+
+    void updateSpin ()
+    {
+        SpinDelta += (spinInput ? Stats.SpinAcceleration : -Stats.SpinDeceleration) * Time.deltaTime;
+        SpinDelta = Mathf.Clamp(SpinDelta, -Stats.MaxSpeed, Stats.MaxSpeed);
+
+        CurrentSpin.Value += SpinDelta * Time.deltaTime;
+
+        if (CurrentSpin.Value == Spin.MAX && SpinDelta > 0)
+        {
+            SpinDelta = 0;
+        }
     }
 
     void redistributeSpinWith (Top otherTop)
@@ -89,16 +107,16 @@ public class Top : MonoBehaviour, IEquatable<Top>
         collisionLock = true;
         otherTop.collisionLock = true;
 
-        bool thisSpunFaster = CurrentSpin == otherTop.CurrentSpin
+        bool thisSpunFaster = CurrentSpin.Value == otherTop.CurrentSpin.Value
             ? RandomExtra.Chance(.5f) // ties are broken randomly
-            : CurrentSpin > otherTop.CurrentSpin;
+            : CurrentSpin.Value > otherTop.CurrentSpin.Value;
 
         Top fasterSpinningTop = thisSpunFaster ? this : otherTop;
         Top slowerSpinningTop = thisSpunFaster ? otherTop : this;
  
-        Spin differential = Mathf.Min(fasterSpinningTop.CurrentSpin, Spin.MAX - slowerSpinningTop.CurrentSpin);
+        Spin differential = Mathf.Min(fasterSpinningTop.CurrentSpin.Value, Spin.MAX - slowerSpinningTop.CurrentSpin.Value);
 
-        fasterSpinningTop.CurrentSpin -= differential;
-        slowerSpinningTop.CurrentSpin += differential;
+        fasterSpinningTop.CurrentSpin.Value -= differential;
+        slowerSpinningTop.CurrentSpin.Value += differential;
     }
 }

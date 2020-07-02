@@ -17,3 +17,6 @@ MonoBehaviour:
   KnockbackTime: 0.7
   InitialSpin:
     value: 60
+  SpinAcceleration: 20
+  SpinDeceleration: 10
+  MaxSpinDelta: 40

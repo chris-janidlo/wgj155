@@ -6,4 +6,5 @@ public class TopStats : ScriptableObject
 {
     public float Acceleration, MaxSpeed, KnockbackTime;
     public Spin InitialSpin;
+    public float SpinAcceleration, SpinDeceleration, MaxSpinDelta;
 }
