@@ -24,7 +24,7 @@ public class Top : MonoBehaviour, IEquatable<Top>
 
     void Start ()
     {
-        knockbackTimer = Stats.KnockbackTime;
+        knockbackTimer = 0;
         CurrentSpin.Value = Stats.InitialSpin;
     }
 
@@ -32,7 +32,7 @@ public class Top : MonoBehaviour, IEquatable<Top>
     {
         updateSpin();
 
-        knockbackTimer += Time.deltaTime;
+        knockbackTimer -= Time.deltaTime;
 
         if (CurrentSpin.Value == Spin.MIN)
         {
@@ -43,8 +43,11 @@ public class Top : MonoBehaviour, IEquatable<Top>
 
     void FixedUpdate ()
     {
-        if (knockbackTimer >= Stats.KnockbackTime)
-            Rigidbody.AddForce(directionalInput * Stats.Acceleration, ForceMode.Acceleration);
+        if (knockbackTimer <= 0)
+        {
+            float accel = Stats.EffectiveAcceleration(CurrentSpin.Value);
+            Rigidbody.AddForce(directionalInput * accel, ForceMode.Acceleration);
+        }
 
         Rigidbody.velocity = Vector3.ClampMagnitude(Rigidbody.velocity, Stats.MaxSpeed);
     }
@@ -53,7 +56,7 @@ public class Top : MonoBehaviour, IEquatable<Top>
     {
         if (collision.gameObject.HasTag(GroundTag)) return;
 
-        knockbackTimer = 0;
+        knockbackTimer = Stats.EffectiveKnockbackTime(CurrentSpin.Value);
 
         Top otherTop = collision.gameObject.GetComponent<Top>();
 

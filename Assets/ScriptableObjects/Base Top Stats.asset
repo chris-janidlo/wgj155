@@ -12,9 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8aff9d148ef46f58e3889cd4408d5a, type: 3}
   m_Name: Base Top Stats
   m_EditorClassIdentifier: 
-  Acceleration: 7.5
+  AccelerationBySpin:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 100
+      value: 9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  KnockbackTimeBySpin:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 100
+      value: 0.6
+      inSlope: -0.008275495
+      outSlope: -0.008275495
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04075691
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   MaxSpeed: 15
-  KnockbackTime: 0.7
   InitialSpin:
     value: 60
   SpinAcceleration: 20
