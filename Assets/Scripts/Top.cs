@@ -92,7 +92,7 @@ public class Top : MonoBehaviour, IEquatable<Top>
     void updateSpin ()
     {
         SpinDelta += (spinInput ? Stats.SpinAcceleration : -Stats.SpinDeceleration) * Time.deltaTime;
-        SpinDelta = Mathf.Clamp(SpinDelta, -Stats.MaxSpeed, Stats.MaxSpeed);
+        SpinDelta = Mathf.Clamp(SpinDelta, -Stats.MaxSpinDelta, Stats.MaxSpinDelta);
 
         CurrentSpin.Value += SpinDelta * Time.deltaTime;
 
