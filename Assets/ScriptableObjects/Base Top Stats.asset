@@ -18,5 +18,6 @@ MonoBehaviour:
   InitialSpin:
     value: 60
   SpinAcceleration: 20
-  SpinDeceleration: 10
-  MaxSpinDelta: 40
+  SpinDeceleration: 20
+  MaxSpinDelta: 60
+  SpinClutchPoint: 20

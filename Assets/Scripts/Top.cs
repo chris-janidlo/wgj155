@@ -91,6 +91,11 @@ public class Top : MonoBehaviour, IEquatable<Top>
 
     void updateSpin ()
     {
+        if (spinInput && -SpinDelta > Stats.SpinClutchPoint)
+        {
+            SpinDelta = Mathf.Sign(SpinDelta) * Stats.SpinClutchPoint;
+        }
+
         SpinDelta += (spinInput ? Stats.SpinAcceleration : -Stats.SpinDeceleration) * Time.deltaTime;
         SpinDelta = Mathf.Clamp(SpinDelta, -Stats.MaxSpinDelta, Stats.MaxSpinDelta);
 
