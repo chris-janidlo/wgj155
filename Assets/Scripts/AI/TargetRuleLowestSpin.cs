@@ -8,7 +8,8 @@ public class TargetRuleLowestSpin : TargetRule
 {
 	public override IEnumerable<WeightedTop> CalculateRule (Top agent, Top previousTarget, IList<Top> others)
 	{
-        Spin minSpin = others.Min(t => t.CurrentSpin);
+		// FIXME: use spin here instead of float
+        float minSpin = others.Min(t => (float) t.CurrentSpin);
         return others.Select(t => new WeightedTop(t, t.CurrentSpin == minSpin ? 1 : 0));
 	}
 }
