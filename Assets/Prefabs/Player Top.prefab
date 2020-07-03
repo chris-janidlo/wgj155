@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8481ff89e8f4e868a3269e51081f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TopPhysics: {fileID: 1379976796091681831}
+  Top: {fileID: 1379976796091681831}
   XInputAxis: Horizontal
   ZInputAxis: Vertical
   SpinButton: Jump

@@ -2,7 +2,7 @@
 
 public class PlayerDriver : MonoBehaviour
 {
-    public Top TopPhysics;
+    public Top Top;
 
     public string XInputAxis, ZInputAxis, SpinButton;
 
@@ -15,7 +15,7 @@ public class PlayerDriver : MonoBehaviour
             Input.GetAxis(ZInputAxis)
         );
 
-        TopPhysics.SetDirectionalInput(directionalInput);
-        TopPhysics.SetSpinInput(Input.GetButton(SpinButton));
+        Top.SetDirectionalInput(directionalInput);
+        Top.SetSpinInput(Input.GetButton(SpinButton));
     }
 }
