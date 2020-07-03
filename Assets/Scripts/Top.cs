@@ -10,9 +10,10 @@ public class Top : MonoBehaviour, IEquatable<Top>
     public TopStats Stats;
     public Rigidbody Rigidbody;
 
-    public TopEvent TopDied;
     public StringConstant GroundTag;
     public SpinVariableInstancer CurrentSpin;
+
+    public TopValueList TopsInScene;
 
     public float SpinDelta;
 
@@ -22,10 +23,11 @@ public class Top : MonoBehaviour, IEquatable<Top>
     Vector3 directionalInput;
     bool spinInput;
 
-    void Start ()
+    void Awake ()
     {
         knockbackTimer = 0;
         CurrentSpin.Value = Stats.InitialSpin;
+        TopsInScene.Add(this);
     }
 
     void Update ()
@@ -36,7 +38,7 @@ public class Top : MonoBehaviour, IEquatable<Top>
 
         if (CurrentSpin.Value == Spin.MIN)
         {
-            TopDied.Raise(this);
+            TopsInScene.Remove(this);
             Destroy(gameObject);
         }
     }

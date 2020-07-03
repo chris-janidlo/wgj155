@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6918332e8ff42f5a9807b1cc881009, type: 3}
+  m_Name: TopsInScene
+  m_EditorClassIdentifier: 
+  _developerDescription: Every top in the current scene
+  Cleared: {fileID: 0}
+  Added: {fileID: 0}
+  Removed: {fileID: 11400000, guid: 45c7bbbc7b73c46409bf7ebdffd16808, type: 2}
+  list: []
