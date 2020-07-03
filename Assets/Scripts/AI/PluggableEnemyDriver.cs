@@ -22,6 +22,7 @@ public class PluggableEnemyDriver : MonoBehaviour
     public List<WeightedsSpinRule> SpinRules;
     public List<WeightedVelocityRule> VelocityRules;
 
+    [SerializeField]
     Top previousTarget;
 
     void Update ()
