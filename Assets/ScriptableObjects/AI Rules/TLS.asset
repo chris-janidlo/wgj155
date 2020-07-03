@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a6918332e8ff42f5a9807b1cc881009, type: 3}
-  m_Name: Tops In Scene
+  m_Script: {fileID: 11500000, guid: 8de8acb1ec76445f1a08cba7b219d363, type: 3}
+  m_Name: TLS
   m_EditorClassIdentifier: 
-  _developerDescription: Every top in the current scene
-  Cleared: {fileID: 0}
-  Added: {fileID: 0}
-  Removed: {fileID: 11400000, guid: 45c7bbbc7b73c46409bf7ebdffd16808, type: 2}
-  list: []
