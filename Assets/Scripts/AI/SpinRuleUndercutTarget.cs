@@ -8,6 +8,6 @@ public class SpinRuleUndercutTarget : SpinRule
 
 	public override Spin CalculateRule (Top agent, Top target, IList<Top> others)
 	{
-        return target.CurrentSpin.Value - UndercutAmount;
+        return target.CurrentSpin - UndercutAmount;
 	}
 }

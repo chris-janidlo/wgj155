@@ -82,7 +82,7 @@ public class PluggableEnemyDriver : MonoBehaviour
 
     bool determineSpinInput (Spin desiredSpin)
     {
-        return Top.CurrentSpin.Value < desiredSpin;
+        return Top.CurrentSpin < desiredSpin;
     }
 
     Vector3 determineDirectionalInput (Vector3 desiredVelocity)

@@ -4791,7 +4791,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  CurrentSpin: {fileID: 2660742567853782702}
+  Top: {fileID: 2883135312020407752}
 --- !u!1 &1380894823
 GameObject:
   m_ObjectHideFlags: 0
@@ -9583,7 +9583,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  CurrentSpin: {fileID: 2660742567853782702}
+  Top: {fileID: 2883135312020407752}
 --- !u!1 &2883135312020407757
 GameObject:
   m_ObjectHideFlags: 0
@@ -9596,7 +9596,6 @@ GameObject:
   - component: {fileID: 2883135312020407752}
   - component: {fileID: 2883135312020407753}
   - component: {fileID: 2883135312020407754}
-  - component: {fileID: 2660742567853782702}
   m_Layer: 0
   m_Name: Base Top
   m_TagString: Untagged
@@ -9634,8 +9633,9 @@ MonoBehaviour:
   Stats: {fileID: 11400000, guid: 2b364bc1bdfc84c84a8813621c1afc45, type: 2}
   Rigidbody: {fileID: 2883135312020407753}
   GroundTag: {fileID: 11400000, guid: c9584a68e098e4a0aa366da28525df63, type: 2}
-  CurrentSpin: {fileID: 2660742567853782702}
   TopsInScene: {fileID: 11400000, guid: 4636a092a797441bd9eb14fa28054870, type: 2}
+  CurrentSpin:
+    value: 0
   SpinDelta: 0
 --- !u!54 &2883135312020407753
 Rigidbody:
@@ -9666,20 +9666,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &2660742567853782702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2883135312020407757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2f3d46f50c65407b86302847b0700ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inMemoryCopy: {fileID: 0}
-  _base: {fileID: 11400000, guid: 12d05da690206409ba034de9199f99eb, type: 2}
 --- !u!1 &3748814550401099366
 GameObject:
   m_ObjectHideFlags: 0
@@ -9831,4 +9817,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  CurrentSpin: {fileID: 2660742567853782702}
+  Top: {fileID: 2883135312020407752}

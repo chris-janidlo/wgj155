@@ -11,6 +11,6 @@ public class NaiveEnemyDriver : MonoBehaviour
     void Update ()
     {
         Top.SetDirectionalInput(PlayerPosition.Value - transform.position);
-        Top.SetSpinInput(Top.CurrentSpin.Value < PlayerSpin.Value);
+        Top.SetSpinInput(Top.CurrentSpin < PlayerSpin.Value);
     }
 }

@@ -8,6 +8,6 @@ public class SpinRuleMinimum : SpinRule
 
     public override Spin CalculateRule (Top agent, Top target, IList<Top> others)
     {
-        return Mathf.Max(agent.CurrentSpin.Value, DesiredMinimumSpin);
+        return Mathf.Max(agent.CurrentSpin, DesiredMinimumSpin);
     }
 }

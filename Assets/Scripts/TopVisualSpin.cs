@@ -6,11 +6,11 @@ using UnityAtoms;
 public class TopVisualSpin : MonoBehaviour
 {
     public AnimationCurve RotationPerSecondBySpin;
-    public SpinVariableInstancer CurrentSpin;
+    public Top Top;
 
     void Update ()
     {
-        float deltaDeg = RotationPerSecondBySpin.Evaluate(CurrentSpin.Value) * Time.deltaTime;
+        float deltaDeg = RotationPerSecondBySpin.Evaluate(Top.CurrentSpin) * Time.deltaTime;
         transform.Rotate(Vector3.forward * deltaDeg, Space.Self);
     }
 }

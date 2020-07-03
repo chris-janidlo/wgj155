@@ -295,7 +295,7 @@ MonoBehaviour:
     Ease: 10
   LargeDeltaMin:
     value: 10
-  CurrentSpin: {fileID: 2290228412719071041}
+  Top: {fileID: 1379976796091681831}
   GaugeImage: {fileID: 5132616563950283823}
 --- !u!114 &5132616563950283823
 MonoBehaviour:
@@ -422,17 +422,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f18e59def0a54bc5b0291d0c7e82445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2290228412719071041 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2660742567853782702, guid: 5e3b40b777c2a40d7a31b646f2ab7129,
-    type: 3}
-  m_PrefabInstance: {fileID: 4261634363400063471}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379976796091681826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2f3d46f50c65407b86302847b0700ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

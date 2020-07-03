@@ -11,7 +11,7 @@ public class SpinGauge : MonoBehaviour
     public TransitionableFloat TransitionForLargeDeltas;
     public Spin LargeDeltaMin;
 
-    public SpinVariableInstancer CurrentSpin;
+    public Top Top;
     public Image GaugeImage;
 
     Spin previousSpin = 0;
@@ -23,15 +23,15 @@ public class SpinGauge : MonoBehaviour
 
     void Update ()
     {
-        if (CurrentSpin.Value - previousSpin >= LargeDeltaMin)
+        if (Top.CurrentSpin - previousSpin >= LargeDeltaMin)
         {
-            TransitionForLargeDeltas.StartTransitionTo(CurrentSpin.Value);
+            TransitionForLargeDeltas.StartTransitionTo(Top.CurrentSpin);
         }
 
-        float valueToShow = TransitionForLargeDeltas.Transitioning ? TransitionForLargeDeltas.Value : (float) CurrentSpin.Value;
+        float valueToShow = TransitionForLargeDeltas.Transitioning ? TransitionForLargeDeltas.Value : (float) Top.CurrentSpin;
 
         GaugeImage.fillAmount = (valueToShow - Spin.MIN) / (Spin.MAX - Spin.MIN);
 
-        previousSpin = CurrentSpin.Value;
+        previousSpin = Top.CurrentSpin;
     }
 }

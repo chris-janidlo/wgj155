@@ -11,6 +11,6 @@ public class PlayerVariableSyncer : MonoBehaviour
     void Update ()
     {
         PlayerPosition.Value = transform.position;
-        PlayerSpin.Value = PlayerTop.CurrentSpin.Value;
+        PlayerSpin.Value = PlayerTop.CurrentSpin;
     }
 }

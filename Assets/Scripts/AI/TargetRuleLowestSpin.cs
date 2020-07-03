@@ -8,7 +8,7 @@ public class TargetRuleLowestSpin : TargetRule
 {
 	public override IEnumerable<WeightedTop> CalculateRule (Top agent, Top previousTarget, IList<Top> others)
 	{
-        Spin minSpin = others.Min(t => t.CurrentSpin.Value);
-        return others.Select(t => new WeightedTop(t, t.CurrentSpin.Value == minSpin ? 1 : 0));
+        Spin minSpin = others.Min(t => t.CurrentSpin);
+        return others.Select(t => new WeightedTop(t, t.CurrentSpin == minSpin ? 1 : 0));
 	}
 }
